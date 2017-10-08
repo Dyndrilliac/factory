@@ -12,8 +12,13 @@ class MessageQueue<T> implements Channel<T>
 
     public MessageQueue(final int maxBufferSize)
     {
-        this.maxBufferSize = maxBufferSize;
         this.queue = new ConcurrentLinkedQueue<T>();
+        this.setMaxBufferSize(maxBufferSize);
+    }
+
+    public final int getMaxBufferSize()
+    {
+        return this.maxBufferSize;
     }
 
     @Override
@@ -32,7 +37,7 @@ class MessageQueue<T> implements Channel<T>
     @Override
     public boolean send(final T item)
     {
-        if ( this.queue.size() < this.maxBufferSize )
+        if ( this.queue.size() < this.getMaxBufferSize() )
         {
             this.queue.offer(item);
             return true;
@@ -41,5 +46,10 @@ class MessageQueue<T> implements Channel<T>
         {
             return false;
         }
+    }
+
+    public final void setMaxBufferSize(final int maxBufferSize)
+    {
+        this.maxBufferSize = maxBufferSize;
     }
 }
