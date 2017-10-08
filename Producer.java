@@ -25,11 +25,11 @@ class Producer<T> implements Runnable
 
                 if ( this.queue.send((T) message) )
                 {
-                    System.out.println("Producer produced " + message);
+                    System.out.println(this.toString() + " produced " + message);
                 }
                 else
                 {
-                    System.out.println("Producer is idle; can't produce because buffer is full.");
+                    System.out.println(this.toString() + " is idle; can't produce because buffer is full.");
                 }
             }
             catch ( Exception e )

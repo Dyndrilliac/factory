@@ -22,11 +22,11 @@ class Consumer<T> implements Runnable
 
                 if ( message != null )
                 {
-                    System.out.println("Consumer consumed " + message);
+                    System.out.println(this.toString() + " consumed " + message);
                 }
                 else
                 {
-                    System.out.println("Consumer is idle; can't consume because buffer is empty.");
+                    System.out.println(this.toString() + " is idle; can't consume because buffer is empty.");
                 }
             }
             catch ( Exception e )
