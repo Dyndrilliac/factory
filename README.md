@@ -8,4 +8,4 @@
 
 *******************************************************************
 
-This iss a standalone Java project for Operating Systems (COP 4610) to demonstrate a solution to the Consumer-Producer problem relating to concurrent multithreading.
+This is a standalone Java project for Operating Systems (COP 4610) to demonstrate a solution to the Consumer-Producer problem relating to concurrent multithreading.
