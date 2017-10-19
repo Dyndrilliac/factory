@@ -1,4 +1,4 @@
-public class SleepUtilities
+class SleepUtilities
 {
     private static final int NAP_TIME = 5;
 
