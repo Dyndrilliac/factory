@@ -15,7 +15,7 @@ This is a standalone Java project for Operating Systems (COP 4610) to demonstrat
 Source Code:
 
 * ***Factory.java***: Thread pool manager code and program entry-point.
-* ***Consumer.java.java***: Consumer thread code.
+* ***Consumer.java***: Consumer thread code.
 * ***Producer.java***: Producer thread code.
 * ***MessageQueue.java***: Thread-safe concurrent FIFO queue implementation of Channel.
 * ***Channel.java***: Definition of abstract Channel interface for synchronized communication between threads.
