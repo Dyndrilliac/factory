@@ -1,12 +1,14 @@
-import java.util.Random;
+import java.security.SecureRandom;
 
 class Producer<T> implements Runnable
 {
     private Channel<T> queue;
+    private SecureRandom prng;
 
     public Producer(final Channel<T> queue)
     {
         this.queue = queue;
+        this.prng = new SecureRandom();
     }
 
     @SuppressWarnings("unchecked")
@@ -21,7 +23,7 @@ class Producer<T> implements Runnable
             {
                 SleepUtilities.nap();
 
-                message = ( new Random() ).nextInt();
+                message = this.prng.nextInt();
 
                 if ( this.queue.send((T) message) )
                 {
